@@ -1,0 +1,78 @@
+{% extends "sablon.html" %} {% block icerik %}
+
+<!-- flash() ile app.py'den gelen hata varsa öncelikle bunları sayfada gösterelim-->
+{% with hatalar = get_flashed_messages() %} {% if hatalar %} {% for hata in
+hatalar %}
+<div class="p-3 mb-2 bg-danger text-white">{{ hata }}</div>
+{% endfor %} {% endif %} {% endwith %}
+
+<!-- Sayfa içeriği -->
+
+<div class="container">
+    <div class="bg-primary text-white text-center py-2 mt-5">
+        <h2>İletişim Sayfası</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3193.194464806265!2d28.639263715228402!3d36.83781847328101!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bf87331167cef1%3A0x39e5c2020fe03f52!2sMoonlight%20Cafe%26Bar!5e0!3m2!1str!2str!4v1577468130292!5m2!1str!2str"
+                    width="550" height="430" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <form action="" method="">
+                <div class="card mt-4">
+                    <div class="card-body p-3">
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-user text-info"></i>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" name="" placeholder="Ad Soyad" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-envelope text-info"></i>
+                                    </div>
+                                </div>
+                                <input type="email" class="form-control" name="" placeholder="E-Posta" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-tag text-info"></i>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" name="" placeholder="Konu" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-comment text-info"></i>
+                                    </div>
+                                </div>
+                                <textarea class="form-control" placeholder="Lütfen Mesajınızı Buraya Yazın.." rows="6"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <input type="submit" value="GÖNDER" class="btn btn-primary btn-block">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

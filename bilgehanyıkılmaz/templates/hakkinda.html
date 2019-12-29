@@ -1,0 +1,28 @@
+{% extends "sablon.html" %} {% block icerik %}
+<!-- flash() ile app.py'den gelen hata varsa öncelikle bunları sayfada gösterelim-->
+{% with hatalar = get_flashed_messages() %} {% if hatalar %} {% for hata in
+    hatalar %}
+<div class="p-3 mb-2 bg-danger text-white">{{ hata }}</div>
+{% endfor %} {% endif %} {% endwith %}
+<hr>
+
+<div class="container">
+    <img src="/static/img/cafe.jpg" width="1080" height="720" alt="">
+    <hr>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <P class="bg-muted"><strong class="text-danger">MoonLight Cafe&Bar,</strong> <br> ilk olarak 2003 yılında Konak
+            Pier’de deniz kıyısında açılmıştır. Büyük bir heyecan ve lezzet aşkı ile kurulan MoonLight Cafe, İzmir’e
+            1980’lerden beri Altınyıldız Classsics, Beymen Business, %100 Cafe, Adabeyi Balık Restaurant gibi bir çok
+            markayı kazandıran ve değer katan Ran Group'a ait bir girişimdir. MoonLight Cafe; sıcak atmosferi, modern ve
+            ferah dekorasyonu, ruhunuzu doyuran kaliteli müzikleri, lezzetli ve özel yemekleri, güleryüzlü hizmet
+            anlayışı ve uygun fiyatları ile size keyifli dakikalar yaşatmaktadır. Yiyecek ve içecek sektöründe
+            vazgeçilmez adres olan MoonLight Cafe; sabah kahvaltısında, öğlen ve akşam yemeklerinizde ya da lezzet
+            kaçamağı istediğiniz her an sizlere hizmet vermeye devam etmekte, ayrıca restoran zincirleşme süreci ile
+            "MoonLight Cafe" markasını dünya üzerindeki tüm lezzet meraklılarına duyurmaktadır.
+        </P>
+
+    </nav>
+
+    {% endblock %}
